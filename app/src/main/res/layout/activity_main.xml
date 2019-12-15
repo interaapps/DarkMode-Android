@@ -52,6 +52,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_app_bg_light"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/background"/>
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -66,7 +73,7 @@
                         android:focusable="true"
                         android:scaleType="center"
                         android:id="@+id/info_icon"
-                        app:srcCompat="@drawable/ic_info_outline_black_24dp" />
+                        app:srcCompat="@drawable/ic_info_outline_white_24dp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -88,21 +95,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="@string/light_mode" />
+                            android:text="@string/light_mode"
+                            android:textColor="@android:color/white"/>
 
                         <RadioButton
                             android:id="@+id/dark_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="@string/dark_mode" />
+                            android:text="@string/dark_mode"
+                            android:textColor="@android:color/white"/>
 
                         <RadioButton
                             android:id="@+id/system_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="@string/system_mode" />
+                            android:text="@string/system_mode"
+                            android:textColor="@android:color/white"/>
                     </RadioGroup>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

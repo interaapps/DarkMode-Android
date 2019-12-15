@@ -11,6 +11,8 @@ import android.widget.RadioGroup
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -22,6 +24,7 @@ class MainActivity : AdvancedActivity() {
     private val toolbar: Toolbar by bindView(R.id.toolbar)
     private val mainLayout: FrameLayout by bindView(R.id.main)
     private val infoLayout: FrameLayout by bindView(R.id.info_layout)
+    private val backGround: AppCompatImageView by bindView(R.id.background)
     private val radioGroup: RadioGroup by bindView(R.id.radio_group)
     private val infoIcon: AppCompatImageView by bindView(R.id.info_icon)
     private val closeIcon: AppCompatImageView by bindView(R.id.close_icon)
@@ -57,9 +60,9 @@ class MainActivity : AdvancedActivity() {
         }
 
         if (uiModeManager.nightMode == UiModeManager.MODE_NIGHT_YES) {
-            infoIcon.setColorFilter(Color.WHITE)
+            backGround.setImageDrawable(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_app_bg_dark))
         } else {
-            infoIcon.setColorFilter(Color.BLACK)
+            backGround.setImageDrawable(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_app_bg_light))
         }
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
