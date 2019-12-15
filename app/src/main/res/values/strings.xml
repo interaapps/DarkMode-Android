@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">DarkMode</string>
+    <string name="info_text">Simply switch on the dark mode in Instagram, Google Play, Twitter etc</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="open_in_browser">Open in Browser</string>
+    <string name="github_repo" translatable="false">https://github.com/DATL4G/DarkMode-Android</string>
+    <string name="dependencies">Dependencies</string>
+    <string name="about">About</string>
+    <string name="data_protection_title">Privacy Policy</string>
+    <string name="dsgvo_url">https://interaapps.de/dsgvo</string>
+
+    <string-array name="dependencies">
+        <item>Calligraphy</item>
+        <item>ViewPump</item>
+        <item>CircularReveal</item>
+        <item>Markwon</item>
+    </string-array>
+
+    <string-array name="dependencies_link">
+        <item>https://github.com/InflationX/Calligraphy</item>
+        <item>https://github.com/InflationX/ViewPump</item>
+        <item>https://github.com/ozodrukh/CircularReveal</item>
+        <item>https://github.com/noties/Markwon</item>
+    </string-array>
+</resources>
