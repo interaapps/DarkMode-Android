@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.TypedValue
 import android.view.View
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AlertDialog
@@ -26,6 +27,15 @@ abstract class AdvancedActivity : AppCompatActivity() {
         return lazy(LazyThreadSafetyMode.NONE) {
             findViewById<ViewT>(idRes)
         }
+    }
+
+    fun getActionBarHeight(): Int {
+        var actionBarHeight = 112
+        val typedValue = TypedValue()
+        if (this.theme.resolveAttribute(android.R.attr.actionBarSize, typedValue, true)) {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(typedValue.data, this.resources.displayMetrics)
+        }
+        return actionBarHeight
     }
 
     fun applyDialogAnimation(alertDialog: AlertDialog): AlertDialog {

@@ -11,7 +11,7 @@ class App : Application() {
         ViewPump.init(ViewPump.builder()
             .addInterceptor(CalligraphyInterceptor(
                 CalligraphyConfig.Builder()
-                    .setDefaultFontPath("fonts/Poppins-Regular.ttf")
+                    .setDefaultFontPath(this.getString(R.string.font_path))
                     .setFontAttrId(R.attr.fontPath)
                     .build()))
             .build())

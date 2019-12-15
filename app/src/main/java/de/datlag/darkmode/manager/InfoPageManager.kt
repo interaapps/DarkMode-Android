@@ -12,17 +12,17 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import de.datlag.darkmode.R
 import de.datlag.darkmode.extend.AdvancedActivity
-import de.datlag.darkmode.view.helper.MaterialSnackbar
 import io.codetail.animation.ViewAnimationUtils
 import io.noties.markwon.Markwon
 import io.noties.markwon.ext.strikethrough.StrikethroughPlugin
 import io.noties.markwon.html.HtmlPlugin
+import java.util.*
 import kotlin.math.hypot
 import kotlin.math.max
+
 
 class InfoPageManager(private val advancedActivity: AdvancedActivity,
                       private val mainLayout: FrameLayout,
@@ -100,17 +100,18 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
 
     private fun informationDialog() {
         advancedActivity.applyDialogAnimation(AlertDialog.Builder(advancedActivity)
-            .setTitle("Info App / Creator")
-            .setMessage("All information...")
+            .setTitle(advancedActivity.getString(R.string.about))
+            .setMessage(advancedActivity.getString(R.string.about_text_part1)+" ${getAge(2001,8,24)} "
+            +advancedActivity.getString(R.string.about_text_part2))
             .setPositiveButton(advancedActivity.getString(R.string.close), null)
-            .setNeutralButton(advancedActivity.getString(R.string.data_protection_title)) { _, _ ->
-                privacyPolicies()
+            .setNeutralButton(advancedActivity.getString(R.string.privacy_policy)) { _, _ ->
+                privacyPolicy()
             }
             .create()).show()
     }
 
-    private fun privacyPolicies() {
-        val url: String = advancedActivity.getString(R.string.dsgvo_url).plus("?viaJS=true")
+    private fun privacyPolicy() {
+        val url: String = advancedActivity.getString(R.string.dsgvo_url) + "?viaJS=true"
         val requestQueue: RequestQueue = Volley.newRequestQueue(advancedActivity)
 
         val markwon = Markwon.builder(advancedActivity)
@@ -122,7 +123,7 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
             val text: Spanned = markwon.toMarkdown(response)
 
             advancedActivity.applyDialogAnimation(AlertDialog.Builder(advancedActivity)
-                .setTitle(advancedActivity.getString(R.string.data_protection_title))
+                .setTitle(advancedActivity.getString(R.string.privacy_policy))
                 .setMessage(text)
                 .setPositiveButton(advancedActivity.getString(R.string.okay), null)
                 .setNeutralButton(advancedActivity.getString(R.string.open_in_browser)) { _, _ ->
@@ -130,12 +131,29 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
                 }
                 .create()).show()
         }, Response.ErrorListener {
-            val snackbar = Snackbar.make(advancedActivity.findViewById(R.id.coordinator), "Error fetching Privacy Policies", Snackbar.LENGTH_LONG)
-            MaterialSnackbar.configSnackbar(advancedActivity, snackbar)
-            snackbar.show()
+            Snackbar.make(advancedActivity.findViewById(R.id.coordinator),
+                advancedActivity.getString(R.string.privacy_policy_error),
+                Snackbar.LENGTH_LONG).show()
         })
 
         requestQueue.add(stringRequest)
+    }
+
+    private fun getAge(year: Int, month: Int, day: Int): Int {
+        val calenderToday = Calendar.getInstance()
+        val currentYear = calenderToday[Calendar.YEAR]
+        val currentMonth = 1 + calenderToday[Calendar.MONTH]
+        val todayDay = calenderToday[Calendar.DAY_OF_MONTH]
+        var age = currentYear - year
+
+        if (month > currentMonth) {
+            --age
+        } else if (month == currentMonth) {
+            if (day > todayDay) {
+                --age
+            }
+        }
+        return age
     }
 
     companion object {

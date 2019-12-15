@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/coordinator">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -87,21 +88,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="Light Mode" />
+                            android:text="@string/light_mode" />
 
                         <RadioButton
                             android:id="@+id/dark_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="Dark Mode" />
+                            android:text="@string/dark_mode" />
 
                         <RadioButton
                             android:id="@+id/system_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="System Mode" />
+                            android:text="@string/system_mode" />
                     </RadioGroup>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,8 +11,6 @@ import android.widget.RadioGroup
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import de.datlag.darkmode.extend.AdvancedActivity
 import de.datlag.darkmode.manager.InfoPageManager
 
@@ -54,7 +52,7 @@ class MainActivity : AdvancedActivity() {
             infoIcon.setColorFilter(Color.BLACK)
         }
 
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+        radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId) {
                 R.id.light_mode -> uiModeManager.nightMode = UiModeManager.MODE_NIGHT_NO
                 R.id.dark_mode -> uiModeManager.nightMode = UiModeManager.MODE_NIGHT_YES

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DarkMode</string>
+    <string name="about">Info</string>
+    <string name="about_text_part1">Hallo, ich bin ein</string>
+    <string name="about_text_part2">"Jahre alter Typ der Android Apps, Desktop Anwendungen und Websites programmiert.\n\nIch arbeite in einem Team namens InteraApps und wir veröffentlichen fast all unsere Projekte auf GitHub.\nFühl dich frei uns dort zu folgen oder zu kontaktieren.\nBitte melde Fehler auf GitHub, damit jeder den Status einfach nachverfolgen kann."</string>
+    <string name="cancel">Abbruch</string>
+    <string name="close">Schließen</string>
+    <string name="dependencies">Abhängigkeiten</string>
+    <string name="info_text">Schalte ganz einfach den Dark Mode in Instagram, Google Play, Twitter usw. ein.</string>
+    <string name="okay">Okay</string>
+    <string name="open_in_browser">Im Browser öffnen</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
+    <string name="privacy_policy_error">Fehler beim Abrufen der Datenschutzerklärung</string>
+    <string name="system_mode">System Modus</string>
+    <string name="dark_mode">Dunkler Modus</string>
+    <string name="light_mode">Heller Modus</string>
+</resources>
