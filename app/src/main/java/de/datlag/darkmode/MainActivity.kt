@@ -11,6 +11,9 @@ import android.widget.RadioGroup
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import de.datlag.darkmode.extend.AdvancedActivity
 import de.datlag.darkmode.manager.InfoPageManager
 
@@ -25,14 +28,21 @@ class MainActivity : AdvancedActivity() {
     private val githubIcon: AppCompatImageView by bindView(R.id.github_icon)
     private val codeIcon: AppCompatImageView by bindView(R.id.code_icon)
     private val helpIcon: AppCompatImageView by bindView(R.id.help_icon)
+    private val adView: AdView by bindView(R.id.bottom_ad)
 
     private lateinit var uiModeManager: UiModeManager
     private lateinit var contextThemeWrapper: ContextThemeWrapper
     private lateinit var infoPageManager: InfoPageManager
+    private lateinit var adRequest: AdRequest
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        MobileAds.initialize(this@MainActivity)
+        adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
         setSupportActionBar(toolbar)
         uiModeManager = getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
         contextThemeWrapper = ContextThemeWrapper(this@MainActivity, this.theme)

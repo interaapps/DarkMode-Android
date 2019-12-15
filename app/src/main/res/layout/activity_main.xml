@@ -106,6 +106,13 @@
                     </RadioGroup>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+                <com.google.android.gms.ads.AdView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:id="@+id/bottom_ad"
+                    android:layout_gravity="center_horizontal|bottom"
+                    app:adSize="BANNER"
+                    app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
             </FrameLayout>
 
             <include
