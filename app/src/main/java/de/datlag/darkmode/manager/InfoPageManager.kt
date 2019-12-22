@@ -17,7 +17,9 @@ import de.datlag.darkmode.R
 import de.datlag.darkmode.extend.AdvancedActivity
 import io.codetail.animation.ViewAnimationUtils
 import io.noties.markwon.Markwon
+import io.noties.markwon.core.CorePlugin
 import io.noties.markwon.ext.strikethrough.StrikethroughPlugin
+import io.noties.markwon.ext.tables.TablePlugin
 import io.noties.markwon.html.HtmlPlugin
 import java.util.*
 import kotlin.math.hypot
@@ -40,11 +42,11 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
 
         codeIcon.setOnClickListener {
             advancedActivity.applyDialogAnimation(AlertDialog.Builder(advancedActivity)
-                .setTitle(advancedActivity.getString(R.string.dependencies))
-                .setItems(advancedActivity.resources.getStringArray(R.array.dependencies)) { _, which: Int ->
+                .setTitle(R.string.dependencies)
+                .setItems(R.array.dependencies) { _, which: Int ->
                     advancedActivity.browserIntent(advancedActivity.resources.getStringArray(R.array.dependencies_link)[which])
                 }
-                .setPositiveButton(advancedActivity.getString(R.string.okay), null)
+                .setPositiveButton(R.string.okay, null)
                 .create()).show()
         }
 
@@ -65,13 +67,10 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
     }
 
     private fun infoReveal() {
-        val dx =
-            max(mainLayout.right, infoLayout.width - mainLayout.right)
+        val dx = max(mainLayout.right, infoLayout.width - mainLayout.right)
         val dy = max(0, infoLayout.height)
-        val finalRadius =
-            hypot(dx.toDouble(), dy.toDouble()).toFloat()
-        val animator =
-            ViewAnimationUtils.createCircularReveal(
+        val finalRadius = hypot(dx.toDouble(), dy.toDouble()).toFloat()
+        val animator = ViewAnimationUtils.createCircularReveal(
                 infoLayout,
                 mainLayout.right,
                 0,
@@ -100,11 +99,11 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
 
     private fun informationDialog() {
         advancedActivity.applyDialogAnimation(AlertDialog.Builder(advancedActivity)
-            .setTitle(advancedActivity.getString(R.string.about))
+            .setTitle(R.string.about)
             .setMessage(advancedActivity.getString(R.string.about_text_part1)+" ${getAge(2001,8,24)} "
             +advancedActivity.getString(R.string.about_text_part2))
-            .setPositiveButton(advancedActivity.getString(R.string.close), null)
-            .setNeutralButton(advancedActivity.getString(R.string.privacy_policy)) { _, _ ->
+            .setPositiveButton(R.string.close, null)
+            .setNeutralButton(R.string.privacy_policy) { _, _ ->
                 privacyPolicy()
             }
             .create()).show()
@@ -115,24 +114,26 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
         val requestQueue: RequestQueue = Volley.newRequestQueue(advancedActivity)
 
         val markwon = Markwon.builder(advancedActivity)
+            .usePlugin(CorePlugin.create())
             .usePlugin(StrikethroughPlugin.create())
             .usePlugin(HtmlPlugin.create())
+            .usePlugin(TablePlugin.create(advancedActivity))
             .build()
 
         val stringRequest = StringRequest(Request.Method.GET, url, Response.Listener { response ->
             val text: Spanned = markwon.toMarkdown(response)
 
             advancedActivity.applyDialogAnimation(AlertDialog.Builder(advancedActivity)
-                .setTitle(advancedActivity.getString(R.string.privacy_policy))
+                .setTitle(R.string.privacy_policy)
                 .setMessage(text)
-                .setPositiveButton(advancedActivity.getString(R.string.okay), null)
-                .setNeutralButton(advancedActivity.getString(R.string.open_in_browser)) { _, _ ->
+                .setPositiveButton(R.string.okay, null)
+                .setNeutralButton(R.string.open_in_browser) { _, _ ->
                     advancedActivity.browserIntent(advancedActivity.getString(R.string.dsgvo_url))
                 }
                 .create()).show()
         }, Response.ErrorListener {
             Snackbar.make(advancedActivity.findViewById(R.id.coordinator),
-                advancedActivity.getString(R.string.privacy_policy_error),
+                R.string.privacy_policy_error,
                 Snackbar.LENGTH_LONG).show()
         })
 

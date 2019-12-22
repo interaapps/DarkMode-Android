@@ -81,16 +81,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
 
                     <RadioGroup
                         android:id="@+id/radio_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:background="@drawable/radio_group_background"
+                        android:padding="16dp">
 
-                        <RadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/light_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -98,7 +105,7 @@
                             android:text="@string/light_mode"
                             android:textColor="@android:color/white"/>
 
-                        <RadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/dark_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -106,7 +113,7 @@
                             android:text="@string/dark_mode"
                             android:textColor="@android:color/white"/>
 
-                        <RadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/system_mode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -114,15 +121,30 @@
                             android:text="@string/system_mode"
                             android:textColor="@android:color/white"/>
                     </RadioGroup>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
 
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:id="@+id/support_button"
+                        android:text="@string/app_button_supported"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/button_selector"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        fontPath="fonts/Poppins-Bold.ttf"/>
+
+                    <com.google.android.gms.ads.AdView
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:id="@+id/bottom_ad"
+                        android:layout_gravity="center_horizontal|bottom"
+                        app:adSize="BANNER"
+                        app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
                 </androidx.appcompat.widget.LinearLayoutCompat>
-                <com.google.android.gms.ads.AdView
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:id="@+id/bottom_ad"
-                    android:layout_gravity="center_horizontal|bottom"
-                    app:adSize="BANNER"
-                    app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
             </FrameLayout>
 
             <include

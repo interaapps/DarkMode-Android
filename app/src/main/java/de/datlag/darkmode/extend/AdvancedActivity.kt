@@ -17,6 +17,7 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
 abstract class AdvancedActivity : AppCompatActivity() {
     init {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
     }
 
     override fun attachBaseContext(newBase: Context?) {
@@ -46,5 +47,10 @@ abstract class AdvancedActivity : AppCompatActivity() {
     fun browserIntent(url: String) {
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         this.startActivity(browserIntent)
+    }
+
+    fun appIntent(packageName: String) {
+        val launchIntent = this.packageManager.getLaunchIntentForPackage(packageName)
+        this.startActivity(launchIntent)
     }
 }

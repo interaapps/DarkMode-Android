@@ -3,21 +3,22 @@ package de.datlag.darkmode
 import android.app.UiModeManager
 import android.content.Context
 import android.content.res.Configuration
-import android.graphics.Color
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.FrameLayout
 import android.widget.RadioGroup
 import androidx.appcompat.view.ContextThemeWrapper
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import de.datlag.darkmode.extend.AdvancedActivity
+import de.datlag.darkmode.manager.AppSupportInfo
 import de.datlag.darkmode.manager.InfoPageManager
+import de.datlag.darkmode.util.AsyncAppFetcher
 
 class MainActivity : AdvancedActivity() {
 
@@ -31,12 +32,16 @@ class MainActivity : AdvancedActivity() {
     private val githubIcon: AppCompatImageView by bindView(R.id.github_icon)
     private val codeIcon: AppCompatImageView by bindView(R.id.code_icon)
     private val helpIcon: AppCompatImageView by bindView(R.id.help_icon)
+    private val supportButton: AppCompatButton by bindView(R.id.support_button)
     private val adView: AdView by bindView(R.id.bottom_ad)
 
     private lateinit var uiModeManager: UiModeManager
     private lateinit var contextThemeWrapper: ContextThemeWrapper
     private lateinit var infoPageManager: InfoPageManager
     private lateinit var adRequest: AdRequest
+
+    private var appInfoCollection: List<AppSupportInfo> = ArrayList()
+    private lateinit var asyncAppFetcher: AsyncAppFetcher
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +70,14 @@ class MainActivity : AdvancedActivity() {
             backGround.setImageDrawable(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_app_bg_light))
         }
 
+        asyncAppFetcher = object: AsyncAppFetcher(this@MainActivity) {
+            override fun onPostExecute(result: List<AppSupportInfo>) {
+                super.onPostExecute(result)
+                appInfoCollection = result
+                appBottomSheet()
+            }
+        }
+
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId) {
                 R.id.light_mode -> uiModeManager.nightMode = UiModeManager.MODE_NIGHT_NO
@@ -80,6 +93,20 @@ class MainActivity : AdvancedActivity() {
         closeIcon.setOnClickListener {
             infoPageManager.start()
         }
+
+        supportButton.setOnClickListener {
+            if (appInfoCollection.isEmpty()) {
+                asyncAppFetcher.execute()
+            } else {
+                appBottomSheet()
+            }
+        }
+    }
+
+    private fun appBottomSheet() {
+        val supportedAppsDialogFragment = SupportedAppsDialogFragment.newInstance(
+            this@MainActivity, appInfoCollection)
+        supportedAppsDialogFragment.show(supportFragmentManager, supportedAppsDialogFragment.tag)
     }
 
     private fun applyRadioButton() {

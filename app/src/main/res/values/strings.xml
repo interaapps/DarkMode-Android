@@ -16,6 +16,19 @@
     <string name="about_text_part2">years old random Dude who programs some Android Apps, Desktop Applications and Websites.\n\nI\'m working in a Team called InteraApps and we publish nearly any of our Projects on GitHub.\nFeel free to follow or contact us there.\nPlease report bugs on GitHub so everyone can easily track status.</string>
     <string name="light_mode">Light Mode</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="app_supported">Supported</string>
+    <string name="app_not_supported">Not Supported</string>
+    <string name="app_installed">Installed</string>
+    <string name="app_starting">Starting selected Application</string>
+    <string name="app_fetching">Fetching Applications</string>
+    <string name="app_button_supported">Supported Apps</string>
+    <string name="app_support_note">Please note that this is not 100% proved and some apps may have an extra setting</string>
+    <string name="app_package">Package:</string>
+    <string name="app_version">Version:</string>
+    <string name="app_code">Code:</string>
+    <string name="app_update">Updated:</string>
+    <string name="app_update_pattern" translatable="false">dd.MM.yyyy HH:mm</string>
+    <string name="start">Start</string>
 
     <string-array name="dependencies">
         <item>Calligraphy</item>
