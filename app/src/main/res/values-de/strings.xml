@@ -20,7 +20,7 @@
     <string name="app_fetching">Abrufen von Apps</string>
     <string name="app_installed">Installiert</string>
     <string name="app_not_supported">Nicht Unterstützt</string>
-    <string name="app_package">"Paket: "</string>
+    <string name="app_package">Paket:</string>
     <string name="app_starting">Starte ausgewählte App</string>
     <string name="app_support_note">Bitte beachte das diese Angabe nicht zu 100% richtig ist und einige Apps möglicherweise ein extra Einstellung haben</string>
     <string name="app_supported">Unterstützt</string>
