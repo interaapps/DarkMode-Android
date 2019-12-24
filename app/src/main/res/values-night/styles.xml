@@ -9,23 +9,7 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
         <item name="shapeAppearanceLargeComponent">@style/BottomDialogComponent</item>
-        <item name="colorSurface">@android:color/background_light</item>
-    </style>
-
-    <style name="MaterialDialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/slide_up</item>
-        <item name="android:windowExitAnimation">@anim/slide_down</item>
-    </style>
-
-    <style name="WindowAnimationTransition">
-        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
-        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
-    </style>
-
-    <style name="BottomDialogComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
-        <item name="android:radius">16dp</item>
+        <item name="colorSurface">@android:color/background_dark</item>
     </style>
 
 </resources>

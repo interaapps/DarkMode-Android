@@ -158,6 +158,6 @@ class InfoPageManager(private val advancedActivity: AdvancedActivity,
     }
 
     companion object {
-        private const val duration: Long = 1000
+        private const val duration: Long = 750
     }
 }

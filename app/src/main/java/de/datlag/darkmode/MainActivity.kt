@@ -121,11 +121,9 @@ class MainActivity : AdvancedActivity() {
         super.onConfigurationChanged(newConfig)
         when (newConfig.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
             Configuration.UI_MODE_NIGHT_NO -> {
-                contextThemeWrapper.setTheme(R.style.LightTheme)
                 recreate()
             }
             Configuration.UI_MODE_NIGHT_YES -> {
-                contextThemeWrapper.setTheme(R.style.DarkTheme)
                 recreate()
             }
         }
