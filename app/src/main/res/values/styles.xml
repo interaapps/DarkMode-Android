@@ -28,4 +28,10 @@
         <item name="android:radius">16dp</item>
     </style>
 
+    <style name="RadioButtonSelector" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@color/primaryColor</item>
+        <item name="colorControlHighlight">@color/primaryLightColor</item>
+    </style>
+
 </resources>

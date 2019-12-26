@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.datlag.darkmode.extend.AdvancedActivity
 import de.datlag.darkmode.manager.AppSupportInfo
 import de.datlag.darkmode.manager.InfoPageManager
@@ -32,7 +33,7 @@ class MainActivity : AdvancedActivity() {
     private val githubIcon: AppCompatImageView by bindView(R.id.github_icon)
     private val codeIcon: AppCompatImageView by bindView(R.id.code_icon)
     private val helpIcon: AppCompatImageView by bindView(R.id.help_icon)
-    private val supportButton: AppCompatButton by bindView(R.id.support_button)
+    private val supportButton: FloatingActionButton by bindView(R.id.support_button)
     private val adView: AdView by bindView(R.id.bottom_ad)
 
     private lateinit var uiModeManager: UiModeManager

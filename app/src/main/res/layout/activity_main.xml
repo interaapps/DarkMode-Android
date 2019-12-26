@@ -103,6 +103,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:text="@string/light_mode"
+                            android:theme="@style/RadioButtonSelector"
                             android:textColor="@android:color/white"/>
 
                         <androidx.appcompat.widget.AppCompatRadioButton
@@ -111,6 +112,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:text="@string/dark_mode"
+                            android:theme="@style/RadioButtonSelector"
                             android:textColor="@android:color/white"/>
 
                         <androidx.appcompat.widget.AppCompatRadioButton
@@ -119,23 +121,24 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:text="@string/system_mode"
+                            android:theme="@style/RadioButtonSelector"
                             android:textColor="@android:color/white"/>
                     </RadioGroup>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="match_parent"
+                    
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:layout_width="?attr/actionBarSize"
                         android:layout_height="?attr/actionBarSize"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
                         android:id="@+id/support_button"
-                        android:text="@string/app_button_supported"
-                        android:textColor="@android:color/white"
-                        android:background="@drawable/button_selector"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        fontPath="fonts/Poppins-Bold.ttf"/>
+                        app:backgroundTint="@color/primaryColor"
+                        app:rippleColor="@color/primaryDarkColor"
+                        app:srcCompat="@drawable/ic_android_head"
+                        app:tint="@android:color/white" />
 
                     <com.google.android.gms.ads.AdView
                         android:layout_width="match_parent"
