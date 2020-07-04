@@ -110,5 +110,4 @@
             app:tint="@color/apps_fab_color" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

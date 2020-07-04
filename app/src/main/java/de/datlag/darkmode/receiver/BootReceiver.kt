@@ -21,5 +21,4 @@ class BootReceiver : BroadcastReceiver() {
     companion object {
         const val QUICKBOOT_POWERON: String = "android.intent.action.QUICKBOOT_POWERON"
     }
-
 }

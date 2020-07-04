@@ -21,5 +21,4 @@ class ShutdownReceiver : BroadcastReceiver() {
     companion object {
         const val QUICKBOOT_POWEROFF: String = "android.intent.action.QUICKBOOT_POWEROFF"
     }
-
 }
