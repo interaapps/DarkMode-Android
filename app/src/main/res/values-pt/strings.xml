@@ -7,4 +7,9 @@
     <string name="app_not_supported">Não suportado</string>
     <string name="app_supported">Suportado</string>
     <string name="installed">Aplicativos instalados</string>
+    <string-array name="instant_apps_no_apps_hints">
+        <item>Nenhum aplicativo encontrado!</item>
+        <item>Isso pode acontecer se você estiver no recurso InstantApps e nenhum dos seus aplicativos suportar esse recurso.</item>
+        <item>Você pode testá-lo novamente no aplicativo instalado.</item>
+    </string-array>
 </resources>

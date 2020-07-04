@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installed">App installate</string>
+    <string name="app_supported">Supportato</string>
+    <string name="app_not_supported">Non supportato</string>
+    <string name="light_mode">Modalità luce</string>
+    <string name="dark_mode">Modalità scura</string>
+    <string name="system_mode">Modalità di sistema</string>
+    <string name="compatibility_hint">Tieni presente che questo non è dimostrato al 100% e alcune app potrebbero avere un\'impostazione aggiuntiva.</string>
+    <string-array name="instant_apps_no_apps_hints">
+        <item>Nessuna app trovata!</item>
+        <item>Questo può accadere se ti trovi nella funzione InstantApps e nessuna delle tue app supporta questa funzione.</item>
+        <item>Ti invitiamo a testarlo di nuovo nell\'app installata.</item>
+    </string-array>
+</resources>

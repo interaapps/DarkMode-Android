@@ -33,7 +33,8 @@ class DarkModeTileService : TileService() {
                 util.applyNightMode(NightMode.DARK, true)
             }
         }
-        qsTile.state = getTileState(util)
+        qsTile?.state = getTileState(util)
+        qsTile?.updateTile()
     }
 
     private fun getTileState(util: Util = Util(this)): Int {

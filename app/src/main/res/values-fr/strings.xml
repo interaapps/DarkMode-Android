@@ -7,4 +7,9 @@
     <string name="dark_mode">Mode sombre</string>
     <string name="system_mode">Mode système</string>
     <string name="compatibility_hint">Veuillez noter que ce n\'est pas prouvé à 100% et que certaines applications peuvent avoir un paramètre supplémentaire.</string>
+    <string-array name="instant_apps_no_apps_hints">
+        <item>Aucune application trouvée!</item>
+        <item>Cela peut se produire si vous utilisez la fonction InstantApps et qu\'aucune de vos applications ne prend en charge cette fonction.</item>
+        <item>Vous êtes invités à le tester à nouveau dans l\'application installée.</item>
+    </string-array>
 </resources>

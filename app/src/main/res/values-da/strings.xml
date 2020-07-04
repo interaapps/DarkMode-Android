@@ -3,6 +3,11 @@
     <string name="installed">Installerede apps</string>
     <string name="app_supported">Understøttet</string>
     <string name="app_not_supported">Ikke understøttet</string>
+    <string-array name="instant_apps_no_apps_hints">
+        <item>Ingen apps fundet!</item>
+        <item>Dette kan ske, hvis du er i InstantApps-funktionen, og ingen af ​​dine apps understøtter denne funktion.</item>
+        <item>Du er velkommen til at teste den igen i den installerede app.</item>
+    </string-array>
     <string name="light_mode">Lys tilstand</string>
     <string name="dark_mode">Mørk tilstand</string>
     <string name="system_mode">Systemtilstand</string>
