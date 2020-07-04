@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installed">Applications installées</string>
+    <string name="app_supported">Supporté</string>
+    <string name="app_not_supported">Non supporté</string>
+    <string name="light_mode">Mode d\'éclairage</string>
+    <string name="dark_mode">Mode sombre</string>
+    <string name="system_mode">Mode système</string>
+    <string name="compatibility_hint">Veuillez noter que ce n\'est pas prouvé à 100% et que certaines applications peuvent avoir un paramètre supplémentaire.</string>
+</resources>

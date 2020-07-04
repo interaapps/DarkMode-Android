@@ -1,0 +1,36 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryLightColor</item>
+        <item name="colorControlNormal">@color/controlColor</item>
+        <item name="colorControlActivated">@color/controlColor</item>
+        <item name="colorControlHighlight">@color/controlColor</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/WindowFadeAnimation</item>
+        <item name="shapeAppearanceLargeComponent">@style/BottomSheetComponent</item>
+    </style>
+
+    <style name="BottomSheetComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:radius">16dp</item>
+    </style>
+
+    <style name="WindowFadeAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <declare-styleable name="ClickableCardView">
+        <attr name="cardBackgroundSelector" format="reference" />
+    </declare-styleable>
+</resources>

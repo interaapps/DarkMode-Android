@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installed">Installerede apps</string>
+    <string name="app_supported">Understøttet</string>
+    <string name="app_not_supported">Ikke understøttet</string>
+    <string name="light_mode">Lys tilstand</string>
+    <string name="dark_mode">Mørk tilstand</string>
+    <string name="system_mode">Systemtilstand</string>
+    <string name="compatibility_hint">Bemærk, at dette ikke er 100% beviset, og nogle apps kan have en ekstra indstilling.</string>
+</resources>

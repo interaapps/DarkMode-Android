@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">DarkMode</string>
+    <string name="font_path" translatable="false">fonts/Poppins-Regular.ttf</string>
+    <string name="font_path_bold" translatable="false">fonts/Poppins-Bold.ttf</string>
+
+    <string name="installed">Installed Apps</string>
+    <string-array name="instant_apps_no_apps_hints">
+        <item>No apps found!</item>
+        <item>This can happen if you are in the InstantApps feature and none of your apps support this feature.</item>
+        <item>You are welcome to test it again in the installed app.</item>
+    </string-array>
+    <string name="app_supported">Supported</string>
+    <string name="app_not_supported">Not Supported</string>
+
+    <string name="light_mode">Light Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="system_mode">System Mode</string>
+    <string name="compatibility_hint">Please note that this is not 100% proved and some apps may have an extra setting.</string>
+</resources>

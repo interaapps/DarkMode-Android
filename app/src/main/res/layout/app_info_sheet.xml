@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:clickable="false"
+    android:focusableInTouchMode="false"
+    android:focusable="false">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/installedText"
+        fontPath="@string/font_path_bold"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/installed"
+        android:textColor="@color/bottom_sheet_text_color"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeMinTextSize="18sp"
+        app:autoSizeTextType="uniform"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/compatibilityHintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/compatibility_hint"
+        android:textColor="@color/bottom_sheet_text_color"
+        android:textSize="16sp"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/progress_bar_color"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appInfoRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

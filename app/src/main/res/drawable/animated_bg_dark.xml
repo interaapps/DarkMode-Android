@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/ic_app_bg_dark">
+    <target android:name="planetMoon">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="500"
+                android:propertyName="translateY"
+                android:valueFrom="0"
+                android:valueTo="50"
+                android:interpolator="@android:anim/bounce_interpolator"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="planetMoon">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="500"
+                android:duration="500"
+                android:propertyName="translateY"
+                android:valueFrom="50"
+                android:valueTo="-1000"
+                android:interpolator="@android:anim/accelerate_interpolator"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="planetSun">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="1000"
+                android:duration="500"
+                android:propertyName="translateY"
+                android:valueFrom="-1000"
+                android:valueTo="50"
+                android:interpolator="@android:anim/accelerate_interpolator"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="planetSun">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="1500"
+                android:duration="500"
+                android:propertyName="translateY"
+                android:valueFrom="50"
+                android:valueTo="0"
+                android:interpolator="@android:anim/bounce_interpolator"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="voidBackground">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="1000"
+                android:duration="500"
+                android:propertyName="fillAlpha"
+                android:valueFrom="1"
+                android:valueTo="0"
+                android:interpolator="@android:anim/linear_interpolator"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="voidBackgroundTo">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="1000"
+                android:duration="500"
+                android:propertyName="fillAlpha"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:interpolator="@android:anim/linear_interpolator"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

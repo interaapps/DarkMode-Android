@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="compatibility_hint">Observe que isso não é 100% comprovado e alguns aplicativos podem ter uma configuração extra.</string>
+    <string name="system_mode">Modo Sistema</string>
+    <string name="dark_mode">Modo escuro</string>
+    <string name="light_mode">Modo de luz</string>
+    <string name="app_not_supported">Não suportado</string>
+    <string name="app_supported">Suportado</string>
+    <string name="installed">Aplicativos instalados</string>
+</resources>
