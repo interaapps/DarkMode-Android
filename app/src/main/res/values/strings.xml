@@ -2,6 +2,8 @@
     <string name="app_name" translatable="false">DarkMode</string>
     <string name="font_path" translatable="false">fonts/Poppins-Regular.ttf</string>
     <string name="font_path_bold" translatable="false">fonts/Poppins-Bold.ttf</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="installed">Installed Apps</string>
     <string-array name="instant_apps_no_apps_hints">

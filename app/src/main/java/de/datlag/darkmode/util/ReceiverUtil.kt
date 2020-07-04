@@ -4,7 +4,6 @@ import android.content.*
 import android.content.pm.PackageManager
 import de.datlag.darkmode.receiver.BootReceiver
 import de.datlag.darkmode.receiver.ShutdownReceiver
-import java.lang.Exception
 
 class ReceiverUtil {
 

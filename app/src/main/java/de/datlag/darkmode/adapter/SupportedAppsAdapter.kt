@@ -9,7 +9,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.datlag.darkmode.R
-import de.datlag.darkmode.commons.isTelevision
 import de.datlag.darkmode.util.AppSupportInfo
 import kotlinx.android.synthetic.main.supported_apps_item.view.*
 

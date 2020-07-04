@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.UiModeManager
 import android.content.Context
-import android.content.ContextWrapper
 import android.content.res.Configuration
-import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import de.datlag.darkmode.commons.sharedPreferences
 import java.lang.ref.WeakReference

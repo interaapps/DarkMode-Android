@@ -5,10 +5,8 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.view.ContextThemeWrapper
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
@@ -19,13 +17,16 @@ import de.datlag.darkmode.commons.activity
 import de.datlag.darkmode.commons.isInstantApp
 import de.datlag.darkmode.commons.showInstall
 import de.datlag.darkmode.extend.DarkModeActivity
+import de.datlag.darkmode.helper.NightModeHelper.NightMode
+import de.datlag.darkmode.helper.NightModeHelper.Util
 import de.datlag.darkmode.model.AppsSupportViewModel
 import de.datlag.darkmode.util.AppSupportInfo
-import de.datlag.darkmode.helper.NightModeHelper.Util
-import de.datlag.darkmode.helper.NightModeHelper.NightMode
 import de.datlag.darkmode.util.ReceiverUtil
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.*
 
 class MainActivity : DarkModeActivity() {
@@ -45,7 +46,7 @@ class MainActivity : DarkModeActivity() {
 
         MobileAds.initialize(activity) {
             adRequest = AdRequest.Builder().build()
-            //adView.loadAd(adRequest)
+            adView.loadAd(adRequest)
         }
 
         util = Util(activity)
